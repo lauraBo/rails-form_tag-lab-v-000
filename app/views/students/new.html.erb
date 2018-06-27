@@ -1,12 +1,10 @@
-
-
-
-<h3>Student Form</h3>
 <%= form_tag students_path do %>
-  <label>First Name</label><br>
-  <%= text_field_tag :'first_name' %><br>
-  <label>Last Name</label><br>
-  <%= text_field_tag :'last_name' %><br>
-
-  <%= submit_tag "Submit Student" %>
+  <label>Post title:</label><br>
+  <input type="text" id="post_title" name="post[title]"><br>
+ 
+  <label>Post description:</label><br>
+  <textarea id="post_description" name="post[description]"></textarea><br>
+ 
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="Submit Post">
 <% end %>
